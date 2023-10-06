@@ -4,7 +4,11 @@ import axios from 'axios';
 // Function to fetch ChatGPT response
 async function fetchChatGPTResponse(question: string): Promise<string> {
   // TODO(briancain): Replace this const with a proper vscode configuration var
-  const apiKey = 'YOUR_CHATGPT_API_KEY'; // Replace with your ChatGPT API key
+  const apiKey = 'fix-me'; // Replace with your ChatGPT API key
+  // TODO(briancain): In reality, users will need a nice way to configure
+  // this plugin with their ChatGPT API key. We can configure the editors workspace to
+  // look for this variable.
+  // const apiKey = vscode.workspace.getConfiguration('ChatGPT API Key Extension'); // Replace with your ChatGPT API key
   const apiUrl = 'https://api.openai.com/v1/completions'; // legacy
   // const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
