@@ -13,7 +13,7 @@
 ## Plugin Usage
 
 - Open up your programming project in VSCode with the auto complete plugin installed.
-- Bring up the command prompt via <Cmd+Shift+p> and start the plugin with `Say ChatGPT`
+- Bring up the command pallette via <Ctrl+Shift+P> or <Cmd+Shift+P> (MacOS) and start the plugin with `Say ChatGPT`
 - Follow the prompt and ask it to generate some code for your project
 - Copy and paste the resulting code into your VSCode IDE
 
