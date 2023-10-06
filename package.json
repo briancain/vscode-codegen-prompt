@@ -50,5 +50,15 @@
   },
   "permissions": [
     "https://api.openai.com/*"
-  ]
+  ],
+  "configuration": {
+    "title": "ChatGPT API Key Extension",
+    "properties": {
+      "api_key_extension.apiKey": {
+        "type": "string",
+        "default": "",
+        "description": "ChatGPT API Key for the extension"
+      }
+    }
+  }
 }
