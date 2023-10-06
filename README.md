@@ -26,7 +26,7 @@ VSCode to auto-generate boilerplate code to help speed up development.
 
 - I received an error!
     + Check the VSCode console to see what error was received while using the plugin.
-    + Open's free-tier accounts only have so many requests that can be made before
+    + OpenAI's free-tier accounts only have so many requests that can be made before
     they charge you. If you have run out of free requests, the plugin will fail to
     fetch your request.
 - I don't see `Say ChatGPT` when I open the command palette
