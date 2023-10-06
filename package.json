@@ -17,6 +17,10 @@
       {
         "command": "vscode-netflix-codegen-prompt.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "extension.askChatGPT",
+        "title": "Say ChatGPT"
       }
     ]
   },

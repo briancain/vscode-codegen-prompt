@@ -3,6 +3,7 @@ import axios from 'axios';
 
 // Function to fetch ChatGPT response
 async function fetchChatGPTResponse(question: string): Promise<string> {
+  // TODO(briancain): Replace this const with a proper vscode configuration var
   const apiKey = 'YOUR_CHATGPT_API_KEY'; // Replace with your ChatGPT API key
   const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
