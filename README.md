@@ -13,9 +13,20 @@
 ## Plugin Usage
 
 - Open up your programming project in VSCode with the auto complete plugin installed.
-- Bring up the command pallette via <Ctrl+Shift+P> or <Cmd+Shift+P> (MacOS) and start the plugin with `Say ChatGPT`
+- Bring up the command palette via <Ctrl+Shift+P> or <Cmd+Shift+P> (MacOS) and start the plugin with `Say ChatGPT`
 - Follow the prompt and ask it to generate some code for your project
 - Copy and paste the resulting code into your VSCode IDE
+
+### Troubleshooting
+
+- I received an error!
+    + Check the VSCode console to see what error was received while using the plugin.
+    + Open's free-tier accounts only have so many requests that can be made before
+    they charge you. If you have run out of free requests, the plugin will fail to
+    fetch your request.
+- I don't see `Say ChatGPT` when I open the command palette
+    + Ensure that the plugin has actually been installed to VSCode, if the auto-complete
+    plugin does not show up there, it has not been installed
 
 ## Publishing
 
