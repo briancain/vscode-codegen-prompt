@@ -5,7 +5,8 @@ import axios from 'axios';
 async function fetchChatGPTResponse(question: string): Promise<string> {
   // TODO(briancain): Replace this const with a proper vscode configuration var
   const apiKey = 'YOUR_CHATGPT_API_KEY'; // Replace with your ChatGPT API key
-  const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+  const apiUrl = 'https://api.openai.com/v1/completions'; // legacy
+  // const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   try {
     const response = await axios.post(
@@ -13,6 +14,7 @@ async function fetchChatGPTResponse(question: string): Promise<string> {
       {
         prompt: question,
         max_tokens: 50, // Adjust the max_tokens as needed
+        model: "gpt-3.5-turbo-instruct",
       },
       {
         headers: {
