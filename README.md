@@ -23,6 +23,12 @@ this VSCode extension for any git tag pushes. This means when ready to release,
 a repository maintainer can tag a commit, and push that tag to GitHub which will
 trigger a GitHub action to do an automated release.
 
+## Linting
+
+This repository will automatically lint TypeScript on Pull Requests and Pushes via
+a configured GitHub Action script. This will help enforce coding standards for
+those contributing to this repo.
+
 ### Authors Note
 
 Note that part of this plugins code was generated with OpenAI. Use at your own
