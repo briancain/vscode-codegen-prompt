@@ -1,26 +1,46 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import axios from 'axios';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+// Function to fetch ChatGPT response
+async function fetchChatGPTResponse(question: string): Promise<string> {
+  const apiKey = 'YOUR_CHATGPT_API_KEY'; // Replace with your ChatGPT API key
+  const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vscode-netflix-codegen-prompt" is now active!');
+  try {
+    const response = await axios.post(
+      apiUrl,
+      {
+        prompt: question,
+        max_tokens: 50, // Adjust the max_tokens as needed
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+        },
+      }
+    );
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('vscode-netflix-codegen-prompt.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from vscode-netflix-codegen-prompt!');
-	});
-
-	context.subscriptions.push(disposable);
+    return response.data.choices[0]?.text || 'No response received from ChatGPT.';
+  } catch (error) {
+    console.error('Error fetching ChatGPT response:', error.message);
+    return 'An error occurred while fetching the response.';
+  }
 }
 
-// This method is called when your extension is deactivated
+export function activate(context: vscode.ExtensionContext) {
+  let disposable = vscode.commands.registerCommand('extension.askChatGPT', async () => {
+    const question = await vscode.window.showInputBox({
+      placeHolder: 'Ask a question to ChatGPT',
+    });
+
+    if (question) {
+      const response = await fetchChatGPTResponse(question);
+      vscode.window.showInformationMessage(`ChatGPT Response: ${response}`);
+    }
+  });
+
+  context.subscriptions.push(disposable);
+}
+
 export function deactivate() {}
+
