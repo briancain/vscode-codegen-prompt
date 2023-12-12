@@ -1,6 +1,6 @@
 # VSCode in-IDE Code Auto-complete
 
-Deliverable: An in-IDE flow that allows the user to ask ChatGPT a question, with the response being rendered in-IDE.
+An in-IDE flow that allows the user to ask ChatGPT a question, with the response being rendered in-IDE.
 
 This plugin is for early adopters interested in using prompt-engineering in
 VSCode to auto-generate boilerplate code to help speed up development.
